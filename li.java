@@ -6,11 +6,11 @@ public class li{
       Node Start = null;
       Node End = null;
     }
-    public int First(){
-      return Start.getVal();
+    public Node First(){
+      return Start;
     }
-    public int Last(){
-      return End.getVal();
+    public Node Last(){
+      return End;
     }
     public void addFirst(int Number){
       if(Start==null||End==null){
@@ -45,6 +45,7 @@ public class li{
     }
     public int getSize(){return Size;}
     public String toString(){
+      if(Size==0)return "[]";
       String tbr ="[ ";
       Node current = Start;
       while(current.hasNext()){
