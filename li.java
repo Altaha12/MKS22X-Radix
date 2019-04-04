@@ -39,9 +39,13 @@ public class li{
       Size+=1;
     }
     public void attatch(li merged){
+      if(merged.getSize()==0)return;
       End.setNext(merged.Start);
       End=merged.End;
       Size+=merged.Size;
+      merged.Size=0;
+      merged.Start=null;
+      merged.End=null;
     }
     public int getSize(){return Size;}
     public String toString(){
@@ -49,10 +53,10 @@ public class li{
       String tbr ="[ ";
       Node current = Start;
       while(current.hasNext()){
-        tbr+=current.getVal()+", ";
+        tbr+=current.get()+", ";
         current= current.nextNode();
       }
-      tbr+=End.getVal();
+      tbr+=End.get();
       tbr+="]";
       return tbr;
     }
