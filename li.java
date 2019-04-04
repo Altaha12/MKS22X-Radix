@@ -40,6 +40,7 @@ public class li{
     }
     public void attatch(li merged){
       if(merged.getSize()==0)return;
+      if(this.getSize()==0){Start = merged.Start;End=merged.End;Size=merged.Size; return;}
       End.setNext(merged.Start);
       End=merged.End;
       Size+=merged.Size;
