@@ -32,7 +32,9 @@ public class li{
 
     }
     private Node Start,End;
+    private int Size;
     public li(){
+      Size=0;
       Node Start = null;
       Node End = null;
     }
@@ -53,6 +55,7 @@ public class li{
         Start.setPrev(added);
         Start=added;
       }
+      Size+=1;
     }
     public void addLast(int Number){
       if(Start==null||End==null){
@@ -65,11 +68,14 @@ public class li{
         End.setNext(added);
         End=added;
       }
+      Size+=1;
     }
     public void attatch(li merged){
       End.setNext(merged.Start);
       End=merged.End;
+      Size+=merge.Size;
     }
+    public int getSize(){return Size;}
     public String toString(){
       String tbr ="[ ";
       Node current = Start;
